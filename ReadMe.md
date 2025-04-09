@@ -50,11 +50,19 @@ If you are using ubuntu 24.04 you may need to run the following command instead:
 
     docker compose up 
 
-This will run the container and show to you the simulation.
+This will run the container.
 
 Now you can interact with the system opening new terminals and running:
 
     docker exec -it turtlebot_lab /bin/bash
 
+To run the simulation first build again the system, I don`t know why but it doesn`t work otherwise. 
+
+    colcon build
+    source install/setup.bash
+
+To run the simulation run the following commands:
+
+    . /Turtlebot_lab/src/mars_rover/leo_rover_simulation/scripts/start_scene.sh
 
 

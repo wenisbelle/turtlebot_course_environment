@@ -25,7 +25,7 @@ RUN apt update \
 
 RUN sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
 RUN wget https://packages.osrfoundation.org/gazebo.key -O - | apt-key add -
-RUN apt-get update \ apt-get install -y gazebo
+RUN apt-get update && apt-get install -y gazebo
 RUN apt-get install -y ros-humble-gazebo-ros-pkgs
 
 RUN apt-get install -y python3-rosdep \
@@ -45,4 +45,4 @@ RUN source /opt/ros/humble/setup.bash  \
     && source install/setup.bash
 
 RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc && \
-    echo "source /turtlebot_ws/install/setup.bash" >> ~/.bashrc
+    echo "source /Turtlebot_lab/install/setup.bash" >> ~/.bashrc
