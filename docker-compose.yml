@@ -26,4 +26,4 @@ services:
     tty: true
     restart: "no"
     network_mode: "host"  # Add this line to use the host network
-    command: /bin/bash  # Add this line to start a bash shell
+    command: bash -c "source /opt/ros/humble/setup.bash && source install/setup.bash && chmode +x /Turtlebot_lab/src/mars_rover/leo_rover_simulation/scripts/start_scene.sh && ./Turtlebot_lab/src/mars_rover/leo_rover_simulation/scripts/start_scene.sh"

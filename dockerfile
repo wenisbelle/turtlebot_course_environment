@@ -34,11 +34,15 @@ RUN apt-get install -y python3-rosdep \
 RUN apt-get install -y git
 
 RUN apt-get install -y ros-humble-gazebo-ros2-control \
-                       ros-humble-xacro \
-                         
-
-RUN apt-get update
+                       ros-humble-xacro 
 
 RUN mkdir -p /Turtlebot_lab/src
 
 WORKDIR /Turtlebot_lab
+
+RUN source /opt/ros/humble/setup.bash  \
+    && colcon build \
+    && source install/setup.bash
+
+RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc && \
+    echo "source /turtlebot_ws/install/setup.bash" >> ~/.bashrc
